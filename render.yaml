@@ -1,0 +1,35 @@
+services:
+  - type: web
+    name: mareekh-backend-stub
+    env: docker
+    plan: free
+    dockerfilePath: backend_stub/Dockerfile
+    autoDeploy: false
+    healthCheckPath: /healthz
+    envVars:
+      - key: APP_NAME
+        value: mareekh-backend-stub
+      - key: APP_ENV
+        value: staging
+      - key: LOG_LEVEL
+        value: INFO
+
+  - type: web
+    name: mareekh-admin-ui
+    env: docker
+    plan: free
+    dockerfilePath: admin-ui/Dockerfile
+    autoDeploy: false
+    envVars:
+      - key: VITE_API_BASE
+        value: https://mareekh-backend-stub.onrender.com
+
+  - type: web
+    name: mareekh-user-ui
+    env: docker
+    plan: free
+    dockerfilePath: user-ui/Dockerfile
+    autoDeploy: false
+    envVars:
+      - key: VITE_API_BASE
+        value: https://mareekh-backend-stub.onrender.com
