@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="220" height="220" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#66e0ff" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#3db9ff" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#0a84ff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="slice" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#bffcff"/>
+      <stop offset="100%" stop-color="#7ae1ff"/>
+    </linearGradient>
+  </defs>
+  <circle cx="110" cy="110" r="95" fill="url(#glow)"/>
+  <circle cx="110" cy="110" r="70" stroke="#9ee8ff" stroke-width="6" fill="none"/>
+  <g transform="translate(110,110)">
+    <!-- 8 citrus slices -->
+    <g id="wedge">
+      <path d="M0,0 L0,-55 A55,55 0 0 1 19.5,-51 L0,0 Z" fill="url(#slice)"/>
+    </g>
+    <use href="#wedge" transform="rotate(45)"/>
+    <use href="#wedge" transform="rotate(90)"/>
+    <use href="#wedge" transform="rotate(135)"/>
+    <use href="#wedge" transform="rotate(180)"/>
+    <use href="#wedge" transform="rotate(225)"/>
+    <use href="#wedge" transform="rotate(270)"/>
+    <use href="#wedge" transform="rotate(315)"/>
+    <circle cx="0" cy="0" r="6" fill="#cfffff"/>
+  </g>
+</svg>
